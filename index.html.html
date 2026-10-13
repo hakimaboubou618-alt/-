@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وكالة الحكمة لصناعة المحتوى الرقمي المتخصص</title>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --teal: #0d9488;
+            --teal-light: #f0fdfa;
+            --slate-100: #f1f5f9;
+            --slate-700: #334155;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8fafc;
+            margin: 0; padding: 0;
+            color: var(--slate-700);
+        }
+
+        /* الهيدر وبانر الترحيب */
+        .hero-section {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--teal);
+        }
+
+        .hero-section h1 { margin: 0; font-size: 32px; letter-spacing: 1px; }
+        .hero-section p { margin: 10px 0 0 0; font-size: 16px; color: #94a3b8; }
+        .founder-badge {
+            display: inline-block;
+            background-color: var(--teal);
+            color: var(--white);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        /* حاوية التصميم الرئيسية */
+        .main-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        .card-title {
+            font-size: 20px;
+            color: var(--primary);
+            margin-top: 0; margin-bottom: 20px;
+            border-bottom: 2px solid var(--slate-100);
+            padding-bottom: 10px;
+        }
+
+        /* تصميم النماذج المدخلة */
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 8px; color: var(--primary); }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px;
+            font-size: 14px; box-sizing: border-box; font-family: inherit;
+        }
+        .form-group input:focus, .form-group select:focus { border-color: var(--teal); outline: none; }
+
+        /* الراديو المخصص للباقات */
+        .package-option {
+            background: var(--slate-100); padding: 15px; border-radius: 8px;
+            margin-bottom: 12px; cursor: pointer; border: 2px solid transparent;
+            transition: 0.2s; display: flex; justify-content: space-between; align-items: center;
+        }
+        .package-option:hover { background: #e2e8f0; }
+        .package-option input { width: auto; margin-left: 10px; }
+        
+        /* الفاتورة التفاعلية الحية */
+        .invoice-box { background-color: var(--teal-light); border: 2px dashed var(--teal); padding: 25px; border-radius: 12px; }
+        .invoice-item { display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 14px; }
+        .total-price { font-size: 22px; font-weight: bold; color: var(--teal); border-top: 2px solid var(--teal); padding-top: 15px; margin-top: 15px; display: flex; justify-content: space-between;}
+
+        .btn-submit {
+            background-color: var(--teal); color: var(--white); width: 100%; padding: 15px;
+            border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer;
+            margin-top: 20px; transition: background 0.3s;
+        }
+        .btn-submit:hover { background-color: #0f766e; }
+
+        @media (max-width: 768px) { .main-container { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <!-- هيدر المنصة الرسمي لوكالة الحكمة -->
+    <div class="hero-section">
+        <h1>وكالة الحكمة لصناعة المحتوى الرقمي المتخصص</h1>
+        <p>نصنع محتوىً طبيّاً وعلميّاً موثوقاً يربط المؤسسات الصحية بجمهورها بدقة واحترافية</p>
+        <div class="founder-badge">مؤسس وصاحب الوكالة: د. حكيم عبوبو</div>
+    </div>
+
+    <!-- حاوية العمل الرئيسية -->
+    <div class="main-container">
+        
+        <!-- القسم الأيمن: نموذج طلب الخدمة للأطباء والمراكز -->
+        <div class="card">
+            <div class="card-title">📝 نموذج طلب صناعة محتوى طبي متخصص</div>
+            <form id="requestForm">
+                <div class="form-group">
+                    <label>اسم الطبيب أو الجهة الطبية:</label>
+                    <input type="text" id="clientName" placeholder="مثال: د. عبدالله محمد أو مستشفى الشفاء" required>
+                </div>
+
+                <div class="form-group">
+                    <label>التخصص الطبي المستهدف:</label>
+                    <input type="text" id="specialty" placeholder="مثال: طب الأطفال، جراحة العظام، التوعية الصيدلانية" required>
+                </div>
+
+                <div class="form-group">
+                    <label>اختر الباقة الرقمية المناسبة:</label>
+                    
+                    <div class="package-option" onclick="updatePrice('silver', 400)">
+                        <label><input type="radio" name="package" value="silver" checked> <strong>الباقة الفضية (صناعة وتوعية)</strong><br><small>4 فيديوهات Reels قصيرة + 6 تصاميم إنفوجرافيك</small></label>
+                        <strong>400 $</strong>
+                    </div>
+
+                    <div class="package-option" onclick="updatePrice('gold', 750)">
+                        <label><input type="radio" name="package" value="gold"> <strong>الباقة الذهبية (البراند الطبي)</strong><br><small>8 فيديوهات Reels قصيرة + 12 تصميم + كتابة مقالين SEO</small></label>
+                        <strong>750 $</strong>
+                    </div>
+
+                    <div class="package-option" onclick="updatePrice('custom', 0)">
+                        <label><input type="radio" name="package" value="custom"> <strong>تغطية فعاليات ومؤتمرات مخصصة</strong><br><small>بث مباشر، تغطية أجنحة، كتابة التوصيات الطبية</small></label>
+                        <strong>حسب الطلب</strong>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>ملاحظات أو متطلبات علمية خاصة بالسيناريو:</label>
+                    <textarea id="notes" rows="3" placeholder="اكتب هنا أي تفاصيل أو مراجع طبية تريد التركيز عليها..."></textarea>
+                </div>
+            </form>
+        </div>
+
+        <!-- القسم الأيسر: مخرجات الفاتورة الحية التفاعلية للوكالة -->
+        <div>
+            <div class="card invoice-box">
+                <div class="card-title" style="color: var(--teal); border-bottom-color: #ccfbf1;">🧾 فاتورة العرض التقديرية الحية</div>
+                
+                <div class="invoice-item">
+                    <span>الجهة المصدرة:</span>
+                    <strong>وكالة الحكمة لصناعة المحتوى</strong>
+                </div>
+                <div class="invoice-item">
+                    <span>العميل:</span>
+                    <strong id="invClient">---</strong>
+                </div>
+                <div class="invoice-item">
+                    <span>التخصص:</span>
+                    <strong id="invSpecialty">---</strong>
+                </div>
+                <div class="invoice-item">
+                    <span>نوع الباقة المحددة:</span>
+                    <strong id="invPackage">الباقة الفضية</strong>
+                </div>
+
+                <div class="total-price">
+                    <span>إجمالي التكلفة:</span>
+                    <span id="invPrice">400 $</span>
+                </div>
+
+                <button class="btn-submit" onclick="submitToWhatsApp()">🚀 إرسال الطلب واعتماده مع د. حكيم</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- كود الجافا سكريبت الذكي لربط الحسابات التلقائية وواتساب -->
+    <script>
+        let currentPrice = 400;
+        let packageName = "الباقة الفضية";
+
+        // تحديث الفاتورة حياً عند الكتابة
+        document.getElementById('clientName').addEventListener('input', function(e) {
+            document.getElementById('invClient').innerText = e.target.value || "---";
+        });
+        document.getElementById('specialty').addEventListener('input', function(e) {
+            document.getElementById('invSpecialty').innerText = e.target.value || "---";
+        });
+
+        function updatePrice(type, price) {
+            currentPrice = price;
+            if(type === 'silver') packageName = "الباقة الفضية";
+            if(type === 'gold') packageName = "الباقة الذهبية";
+            if(type === 'custom') packageName = "تغطية فعاليات ومؤتمرات مخصصة";
+
+            document.getElementById('invPackage').innerText = packageName;
+            document.getElementById('invPrice').innerText = price === 0 ? "يحدد لاحقاً" : price + " $";
+        }
+
+        // إرسال البيانات فوراً لواتساب د. حكيم عبوبو عند ضغط الزر
+        function submitToWhatsApp() {
+            const client = document.getElementById('clientName').value;
+            const spec = document.getElementById('specialty').value;
+            const notes = document.getElementById('notes').value;
+
+            if(!client || !spec) {
+                alert("برجاء ملء خانة الاسم والتخصص الطبي أولاً.");
+                return;
+            }
+
+            const message = `مرحباً دكتور حكيم عبوبو، هناك طلب جديد لوكالة الحكمة:%0A%0A` +
+                            `• اسم العميل: ${client}%0A` +
+                            `• التخصص الطبي: ${spec}%0A` +
+                            `• الباقة المختارة: ${packageName}%0A` +
+                            `• السعر التقديري: ${currentPrice} $%0A` +
+                            `• ملاحظات السيناريو: ${notes}`;
+
